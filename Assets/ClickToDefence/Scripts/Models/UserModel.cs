@@ -5,6 +5,6 @@ namespace ClickToDefence.Scripts.Models
 	[Serializable]
 	public class UserModel
 	{
-		public int level;
+		public int waveIndex;
 	}
 }

@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+
 namespace ClickToDefence.Scripts.Infrastructure.StateMachines.Base
 {
 	public class BaseState : IState
@@ -9,12 +11,16 @@ namespace ClickToDefence.Scripts.Infrastructure.StateMachines.Base
 			this.stateMachine = stateMachine;
 		}
 
-		internal virtual void OnEnter() { }
+		internal virtual UniTask OnEnter()
+		{
+			return UniTask.CompletedTask;
+		}
+		
 		internal virtual void OnExit() { }
 
-		protected void ChangeState<TState>() where TState : IState
+		protected async UniTask ChangeState<TState>() where TState : IState
 		{
-			stateMachine.ChangeState<TState>();
+			await stateMachine.ChangeState<TState>();
 		}
 	}
 }

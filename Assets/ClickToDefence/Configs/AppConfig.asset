@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ed2decd6f54d05953632b9ca99ed8c, type: 3}
+  m_Name: AppConfig
+  m_EditorClassIdentifier: 
+  coreGameplayConfig: {fileID: 11400000, guid: e2356655eddd4492ba5cb3ec333aa6ef, type: 2}
+  locationsConfig: {fileID: 11400000, guid: e009eddee5a7b40cb9b41dee903b8a3c, type: 2}
+  camera:
+    m_AssetGUID: fc912879a489741e4ad68b5f7170d716
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  uiView:
+    m_AssetGUID: 9d70d51d69f624883905bf9acb097c22
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0

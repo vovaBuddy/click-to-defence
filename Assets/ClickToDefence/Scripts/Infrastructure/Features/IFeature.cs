@@ -7,5 +7,6 @@ namespace ClickToDefence.Scripts.Infrastructure.Features
 		public UniTask Init();
 		public UniTask Deinit();
 		public void Update();
+		public void Destroy();
 	}
 }

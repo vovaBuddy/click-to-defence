@@ -11,6 +11,12 @@ namespace ClickToDefence.Scripts.Infrastructure.Services.Content
 			var go = await Addressables.InstantiateAsync(reference.RuntimeKey, parent).ToUniTask();
 			return go.GetComponent<T>();
 		}
+		
+		public async UniTask<T> SpawnAsync<T>(AssetReference reference, Vector3 position, Quaternion rotation)
+		{
+			var go = await Addressables.InstantiateAsync(reference.RuntimeKey, position, rotation).ToUniTask();
+			return go.GetComponent<T>();
+		}
 
 		public async UniTask<T> LoadAsync<T>(AssetReference reference)
 		{

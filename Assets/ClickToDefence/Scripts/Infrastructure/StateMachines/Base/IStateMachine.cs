@@ -1,7 +1,9 @@
+using Cysharp.Threading.Tasks;
+
 namespace ClickToDefence.Scripts.Infrastructure.StateMachines.Base
 {
 	public interface IStateMachine
 	{
-		internal void ChangeState<TState>() where TState : IState;
+		internal UniTask ChangeState<TState>() where TState : IState;
 	}
 }

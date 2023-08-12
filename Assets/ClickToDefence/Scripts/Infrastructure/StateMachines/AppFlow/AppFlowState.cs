@@ -1,6 +1,7 @@
 using ClickToDefence.Scripts.Infrastructure.DependenciesContainers;
 using ClickToDefence.Scripts.Infrastructure.Services;
 using ClickToDefence.Scripts.Infrastructure.StateMachines.Base;
+using Cysharp.Threading.Tasks;
 
 namespace ClickToDefence.Scripts.Infrastructure.StateMachines.AppFlow
 {
@@ -12,6 +13,11 @@ namespace ClickToDefence.Scripts.Infrastructure.StateMachines.AppFlow
 		: base(stateMachine)
 		{
 			this.services = services;
+		}
+
+		public virtual void Update()
+		{
+			
 		}
 	}
 }

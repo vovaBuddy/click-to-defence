@@ -6,7 +6,6 @@ using ClickToDefence.Scripts.Infrastructure.Services.Configs;
 using ClickToDefence.Scripts.Infrastructure.Services.Content;
 using ClickToDefence.Scripts.Infrastructure.Services.Models;
 using ClickToDefence.Scripts.Infrastructure.Services.UI;
-using ClickToDefence.Scripts.Infrastructure.StateMachines;
 using ClickToDefence.Scripts.Infrastructure.StateMachines.AppFlow;
 using ClickToDefence.Scripts.Infrastructure.StateMachines.Base;
 using Cysharp.Threading.Tasks;
@@ -24,7 +23,7 @@ namespace ClickToDefence.Scripts.Apps.States
 		public BootstrapAppFlowState(IStateMachine stateMachine, DependenciesContainer<IService> services) 
 			: base(stateMachine, services) { }
 
-		internal override async void OnEnter()
+		internal override async UniTask OnEnter()
 		{
 			base.OnEnter();
 
@@ -37,6 +36,8 @@ namespace ClickToDefence.Scripts.Apps.States
 			await BootstrapUIService();
 
 			BootstrapModelsService();
+			
+			await ChangeState<CoreGameplayAppFlowState>();
 		}
 
 		private void BootstrapContentService()

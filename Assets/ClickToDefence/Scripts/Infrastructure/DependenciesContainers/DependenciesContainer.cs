@@ -7,14 +7,14 @@ namespace ClickToDefence.Scripts.Infrastructure.DependenciesContainers
 	{
 		private readonly Dictionary<Type, TDependency> dependencies = new Dictionary<Type, TDependency>();
 
-		public void Register(TDependency dependency)
+		public void Register<T>(T dependency) where T : TDependency
 		{
-			dependencies.Add(typeof(TDependency), dependency);
+			dependencies.Add(typeof(T), dependency);
 		}
 
-		public TDependency Resolve()
+		public T Resolve<T>() where T : TDependency
 		{
-			return dependencies[typeof(TDependency)];
+			return (T) dependencies[typeof(T)];
 		}
 	}
 }

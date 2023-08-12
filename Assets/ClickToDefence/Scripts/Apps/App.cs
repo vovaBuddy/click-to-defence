@@ -22,5 +22,10 @@ namespace ClickToDefence.Scripts.Apps
                 
             }, typeof(BootstrapAppFlowState));
         }
+
+        private void Update()
+        {
+            appFlowStateMachine.activeState.Update();
+        }
     }
 }
