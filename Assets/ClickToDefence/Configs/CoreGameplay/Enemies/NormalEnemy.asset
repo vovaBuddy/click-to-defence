@@ -17,6 +17,6 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  speed: 0.5
-  hp: 1
+  speed: 0.7
+  hp: 2
   damage: 1

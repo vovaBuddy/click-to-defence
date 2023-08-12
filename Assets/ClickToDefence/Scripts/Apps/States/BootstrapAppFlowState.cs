@@ -25,8 +25,6 @@ namespace ClickToDefence.Scripts.Apps.States
 
 		internal override async UniTask OnEnter()
 		{
-			base.OnEnter();
-
 			BootstrapContentService();
 			
 			await BootstrapConfigsService();

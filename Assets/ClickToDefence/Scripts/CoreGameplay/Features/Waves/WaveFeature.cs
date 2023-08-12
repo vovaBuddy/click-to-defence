@@ -6,6 +6,7 @@ using ClickToDefence.Scripts.Infrastructure.Services.Configs;
 using ClickToDefence.Scripts.Infrastructure.Services.Models;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+#pragma warning disable 4014
 
 namespace ClickToDefence.Scripts.CoreGameplay.Features.Waves
 {
@@ -36,7 +37,7 @@ namespace ClickToDefence.Scripts.CoreGameplay.Features.Waves
 		public UniTask Init()
 		{
 			waveIndex = modelsService.userModel.waveIndex;
-			waveConfig = configsService.coreGameplayConfig.waveConfigs[waveIndex];
+			waveConfig = configsService.coreGameplayConfig.waveConfigs[waveIndex % configsService.coreGameplayConfig.waveConfigs.Count];
 
 			SetDelayTimer();
 			
@@ -67,17 +68,17 @@ namespace ClickToDefence.Scripts.CoreGameplay.Features.Waves
 				SetDelayTimer();
 			}
 		}
+		
+		public bool IsLastEnemySpawned()
+		{
+			return waveUnitIndex >= waveConfig.unitConfigs.Count;
+		}
 
-		private void SpawnEnemyAsync()
+		private async UniTask SpawnEnemyAsync()
 		{
 			var unitConfig = waveConfig.unitConfigs[waveUnitIndex].config;
 			var spawnPosition = locationFeature.EnemySpawnPoint();
-			enemiesFactoryFeature.SpawnEnemy<Enemy>(unitConfig, spawnPosition, Quaternion.identity);
-		}
-
-		private bool IsLastEnemySpawned()
-		{
-			return waveUnitIndex >= waveConfig.unitConfigs.Count;
+			await enemiesFactoryFeature.SpawnEnemy<Enemy>(unitConfig, spawnPosition, Quaternion.identity);
 		}
 
 		private void SetDelayTimer()

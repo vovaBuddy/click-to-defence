@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae1d6a66a884a6da5f9cc382b0c9391, type: 3}
   m_Name: CoreGameplayConfig
   m_EditorClassIdentifier: 
+  enemies:
+    serializedVersion: 2
+    m_Bits: 64
   waveConfigs:
   - {fileID: 11400000, guid: 1904667c834c84223a9dbda7ea778b4d, type: 2}

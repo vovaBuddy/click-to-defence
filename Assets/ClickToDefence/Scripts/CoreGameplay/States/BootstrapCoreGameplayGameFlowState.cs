@@ -1,3 +1,4 @@
+using ClickToDefence.Scripts.CoreGameplay.Features.DoDamage;
 using ClickToDefence.Scripts.CoreGameplay.Features.Enemies;
 using ClickToDefence.Scripts.CoreGameplay.Features.EnemyBehaviors;
 using ClickToDefence.Scripts.CoreGameplay.Features.Locations;
@@ -5,6 +6,7 @@ using ClickToDefence.Scripts.CoreGameplay.Features.Waves;
 using ClickToDefence.Scripts.Infrastructure.DependenciesContainers;
 using ClickToDefence.Scripts.Infrastructure.Features;
 using ClickToDefence.Scripts.Infrastructure.Services;
+using ClickToDefence.Scripts.Infrastructure.Services.Cameras;
 using ClickToDefence.Scripts.Infrastructure.Services.Configs;
 using ClickToDefence.Scripts.Infrastructure.Services.Content;
 using ClickToDefence.Scripts.Infrastructure.Services.Models;
@@ -27,8 +29,6 @@ namespace ClickToDefence.Scripts.CoreGameplay.States
 
 		internal override async UniTask OnEnter()
 		{
-			base.OnEnter();
-			
 			var enemiesFactoryFeature = new EnemiesFactoryFeature(services.Resolve<ContentService>());
 			features.Register(enemiesFactoryFeature);
 			
@@ -45,13 +45,17 @@ namespace ClickToDefence.Scripts.CoreGameplay.States
 			
 			var enemyBehaviorFeature = new EnemyBehaviorFeature(enemiesFactoryFeature);
 			features.Register(enemyBehaviorFeature);
+
+			var playerDoDamageFeature = new PlayerDoDamageFeature(
+				services.Resolve<CameraService>(),
+				services.Resolve<ConfigsService>(),
+				services.Resolve<ModelsService>(),
+				enemiesFactoryFeature);
+			features.Register(playerDoDamageFeature);
 			
 			await ChangeState<WaveCoreGameplayGameFlowState>();
-		}
-
-		internal override void OnExit()
-		{
 			
+			await base.OnEnter();
 		}
 
 		protected override void UpdateInternal()

@@ -33,6 +33,9 @@ namespace ClickToDefence.Scripts.Apps.States
 				{typeof(WaveCoreGameplayGameFlowState), 
 					new WaveCoreGameplayGameFlowState(gameFlowStateMachine, services, features)},
 				
+				{typeof(ResultCoreGameplayGameFlowState), 
+					new ResultCoreGameplayGameFlowState(gameFlowStateMachine, services, features)},
+				
 			}, typeof(BootstrapCoreGameplayGameFlowState));
 		}
 

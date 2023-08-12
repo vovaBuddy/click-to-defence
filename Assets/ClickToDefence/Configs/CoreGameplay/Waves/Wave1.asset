@@ -18,12 +18,12 @@ MonoBehaviour:
   - waitSecondsBetweenSpawn: 1
     config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
   - waitSecondsBetweenSpawn: 0.1
-    config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
+    config: {fileID: 11400000, guid: 6c124418430084bc697adc22dd3090ca, type: 2}
   - waitSecondsBetweenSpawn: 3
     config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
   - waitSecondsBetweenSpawn: 0.1
-    config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
+    config: {fileID: 11400000, guid: c45065266d9b54cddadc89a578c6ed60, type: 2}
   - waitSecondsBetweenSpawn: 0.1
-    config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
+    config: {fileID: 11400000, guid: c45065266d9b54cddadc89a578c6ed60, type: 2}
   - waitSecondsBetweenSpawn: 0.1
-    config: {fileID: 11400000, guid: ace3767e1b0794214be432ac062d087b, type: 2}
+    config: {fileID: 11400000, guid: c45065266d9b54cddadc89a578c6ed60, type: 2}

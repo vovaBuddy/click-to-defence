@@ -13,9 +13,9 @@ namespace ClickToDefence.Scripts.Apps
         private AppFlowStateMachine appFlowStateMachine = new AppFlowStateMachine();
         private DependenciesContainer<IService> services = new DependenciesContainer<IService>();
         
-        void Awake()
+         async void Awake()
         {
-            appFlowStateMachine.Init(new Dictionary<Type, AppFlowState>() {
+            await appFlowStateMachine.Init(new Dictionary<Type, AppFlowState>() {
                 
                 {typeof(BootstrapAppFlowState), new BootstrapAppFlowState(appFlowStateMachine, services)},
                 {typeof(CoreGameplayAppFlowState), new CoreGameplayAppFlowState(appFlowStateMachine, services)},

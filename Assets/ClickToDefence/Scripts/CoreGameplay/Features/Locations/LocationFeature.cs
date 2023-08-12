@@ -47,7 +47,7 @@ namespace ClickToDefence.Scripts.CoreGameplay.Features.Locations
 
 		public Vector3 EnemySpawnPoint()
 		{
-			var random = Random.insideUnitCircle * 10;
+			var random = Random.insideUnitCircle.normalized * 10;
 			return location.towerSpawnPoint.transform.position + new Vector3(random.x, random.y, 0);
 		}
 	}

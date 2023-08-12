@@ -42,6 +42,16 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53d2a7e49e27b449492a20ef77447683
+    m_Address: Assets/ClickToDefence/Content/Prefabs/CoreGameplay/Enemies/BigEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 06ed7ba7017844c2884e7230c9d60e89
+    m_Address: Assets/ClickToDefence/Content/Prefabs/CoreGameplay/Enemies/FastEnemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 5525e033cffda4fd9b51f2d8ecda1b10, type: 2}
   m_SchemaSet:

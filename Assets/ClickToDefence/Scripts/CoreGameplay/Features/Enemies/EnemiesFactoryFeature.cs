@@ -60,5 +60,10 @@ namespace ClickToDefence.Scripts.CoreGameplay.Features.Enemies
 			enemies.Remove(enemy);
 			contentService.Releace(enemy.gameObject);
 		}
+
+		public bool HasAliveEnemies()
+		{
+			return enemies.Count > 0;
+		}
 	}
 }
